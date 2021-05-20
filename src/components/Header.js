@@ -12,7 +12,7 @@ const Header = () => {
                 </div>
 
                 {isOpen && (
-                    <nav className="absolute w-9/12 ml-10 mt-56">
+                    <nav className="z-99 absolute w-9/12 ml-10 mt-56">
                         <ul className="bg-white shadow-2xl rounded-2xl py-3">
                             <li className="cursor-pointer py-3 px-5 border-b border-gray-200">About</li>
                             <li className="cursor-pointer py-3 px-5 border-b border-gray-200">Discover</li>

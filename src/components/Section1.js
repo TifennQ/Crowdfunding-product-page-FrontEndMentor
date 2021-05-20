@@ -5,7 +5,7 @@ import bookmark from '../images/icon-bookmark.svg'
 const Section1 = () => {
     return (
         <>
-            <section className="relative bg-white mx-5 px-5 rounded-lg -mt-20 pb-10">
+            <section className="relative border bg-white mx-5 px-5 rounded-lg -mt-20 pb-10">
                 <img src={mastercraft} alt="Mastercraft" className="mastercraft-logo"/>
                 <div className="pt-10 pb-3">
                     <h2 className="text-center font-bold text-xl pb-2">Mastercraft Bamboo Monitor Riser</h2>
@@ -19,6 +19,7 @@ const Section1 = () => {
                     </button>
                     <img src={bookmark} alt="Bookmark"/>
                 </div>
+
             </section>
         </>
     )

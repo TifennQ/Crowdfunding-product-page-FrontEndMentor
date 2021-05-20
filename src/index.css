@@ -19,6 +19,18 @@ body {
   transform: translateX(-50%);
 }
 
+.loadbar-container {
+  width: 90%;
+  height: 0.8rem;
+  background-color: #f3f4f6;
+}
+
+.loadbar {
+  width: 80%;
+  height: 0.8rem;
+  background-color: hsl(176, 72%, 28%);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
