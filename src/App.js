@@ -1,3 +1,4 @@
+import About from "./components/About";
 import Backers from "./components/Backers";
 import Header from "./components/Header";
 import Section1 from "./components/Section1";
@@ -11,6 +12,7 @@ function App() {
       <Showcase/>
       <Section1/>
       <Backers/>
+      <About/>
     </div>
   );
 }

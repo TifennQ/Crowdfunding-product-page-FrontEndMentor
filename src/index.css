@@ -12,6 +12,24 @@ body {
   background-color: hsl(176, 72%, 28%);
 }
 
+.btn-disabled {
+  background-color: #9b9b9b;
+}
+
+.pledge {
+  color: hsl(176, 72%, 28%);
+}
+
+.gray_disabled {
+  color: #9b9b9b;
+  filter: brightness(90%) opacity(50%);
+}
+
+.disabled {
+  filter: brightness(90%) opacity(50%);
+}
+
+
 .mastercraft-logo {
   position: absolute;
   left: 50%;
