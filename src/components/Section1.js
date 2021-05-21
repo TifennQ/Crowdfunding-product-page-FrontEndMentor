@@ -2,7 +2,7 @@ import React from 'react'
 import mastercraft from '../images/logo-mastercraft.svg'
 import bookmark from '../images/icon-bookmark.svg'
 
-const Section1 = () => {
+const Section1 = ({isModalOpen, setIsModalOpen}) => {
     return (
         <>
             <section className="relative border bg-white mx-5 px-5 rounded-lg -mt-20 pb-10">
@@ -14,7 +14,7 @@ const Section1 = () => {
                     </p>
                 </div>
                 <div className="flex justify-between">
-                    <button class="btn rounded-full py-1 px-6 text-white">
+                    <button onClick={() => setIsModalOpen(!isModalOpen)} class="btn rounded-full py-1 px-6 text-white">
                         Back this project
                     </button>
                     <img src={bookmark} alt="Bookmark"/>

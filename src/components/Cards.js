@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
-import data from "../data"
+import React from 'react'
 
-const Cards = () => {
-    const [cards, setCards] = useState(data)
+
+const Cards = ({cards}) => {
     return (
         <>
             <div>
@@ -15,7 +14,7 @@ const Cards = () => {
                                 <h4 className= {`${left === "0" ? "pledge font-bold disabled" : "pledge font-bold"}`}>{pledge}</h4>
                                 <p className={`${left === "0" ? "mt-5 text-gray-500 disabled" : "mt-5 text-gray-500"}`} >{description}</p>
                                 <p className={`${left === "0" ? "text-gray-500 mt-5 disabled" : "text-gray-500 mt-5"}`}><span className="text-black text-2xl font-bold">{left}</span> left</p>
-                                <button className={`${left === "0" ? "btn-disabled rounded-full py-3 px-6 text-white mt-5 font-bold disabled" : "btn rounded-full py-3 px-6 text-white mt-5 font-bold"}`}>{button}</button>
+                                <button className={`${left === "0" ? "btn-disabled cursor-not-allowed rounded-full py-3 px-6 text-white mt-5 font-bold disabled" : "btn rounded-full py-3 px-6 text-white mt-5 font-bold"}`}>{button}</button>
                             </div>
                         )
                     })  

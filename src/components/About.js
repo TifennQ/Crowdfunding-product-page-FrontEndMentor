@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Cards from './Cards'
+import data from "../data"
 
-
-const About = () => {   
+const About = () => {  
+    const [cards, setCards] = useState(data) 
     return (
         <>
             <section className="bg-white border mx-5 px-5 rounded-lg mt-5 py-5">
@@ -14,7 +15,7 @@ const About = () => {
                 <p className="text-gray-500 pt-5">Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
     to allow notepads, pens, and USB sticks to be stored under the stand.</p>
               </div>
-            <Cards/>
+            <Cards cards={cards}/>
             </section>
         </>
     )
