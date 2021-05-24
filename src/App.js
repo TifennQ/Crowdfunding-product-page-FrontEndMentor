@@ -6,12 +6,15 @@ import Section1 from "./components/Section1";
 import { Showcase } from "./components/Showcase";
 import React, {useState, useEffect, useRef} from 'react'
 import ModalCompleted from "./components/ModalCompleted";
+import useWindowDimensions from './getWindowDimensions';
 
 function App() {
+  const {width, height} = useWindowDimensions()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isModalCompletedOpen, setIsModalCompletedOpen] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [pledgeIsSelected, setPledgeIsSelected] = useState(0)
+  const [isDesktop, setIsDesktop] = useState(false)
  
   useEffect(() => {
     const body = document.getElementById('root')
@@ -23,10 +26,18 @@ function App() {
       body.classList.remove('withModalOpen')
     }
 
-  }, [isModalCompletedOpen, isModalOpen, isMenuOpen])
+    if(width < 960) {
+      setIsDesktop(false)
+    }
+    else {
+      setIsDesktop(true)
+    }
+
+  }, [isModalCompletedOpen, isModalOpen, isMenuOpen, width])
+
   return (
     <div>
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} isDesktop={isDesktop}/>
       <Modal 
         isModalOpen={isModalOpen} 
         setIsModalOpen={setIsModalOpen} 
@@ -36,7 +47,7 @@ function App() {
         setIsModalCompletedOpen={setIsModalCompletedOpen}
         />
       <ModalCompleted isModalCompletedOpen={isModalCompletedOpen} setIsModalCompletedOpen={setIsModalCompletedOpen}/>
-      <Showcase/>
+      <Showcase isDesktop={isDesktop}/>
       <Section1 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
       <Backers/>
       <About/>
