@@ -10,22 +10,23 @@ import ModalCompleted from "./components/ModalCompleted";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isModalCompletedOpen, setIsModalCompletedOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [pledgeIsSelected, setPledgeIsSelected] = useState(0)
  
   useEffect(() => {
     const body = document.getElementById('root')
 
-    if(isModalOpen || isModalCompletedOpen) {
+    if(isModalOpen || isModalCompletedOpen || isMenuOpen) {
       body.classList.add('withModalOpen')
     }
     else {
       body.classList.remove('withModalOpen')
     }
 
-  }, [isModalCompletedOpen, isModalOpen])
+  }, [isModalCompletedOpen, isModalOpen, isMenuOpen])
   return (
     <div>
-      <Header/>
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
       <Modal 
         isModalOpen={isModalOpen} 
         setIsModalOpen={setIsModalOpen} 
