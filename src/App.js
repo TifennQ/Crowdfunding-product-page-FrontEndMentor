@@ -49,7 +49,7 @@ function App() {
       <ModalCompleted isModalCompletedOpen={isModalCompletedOpen} setIsModalCompletedOpen={setIsModalCompletedOpen}/>
       <Showcase isDesktop={isDesktop}/>
       <Section1 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} isDesktop={isDesktop}/>
-      <Backers/>
+      <Backers isDesktop={isDesktop}/>
       <About/>
     </div>
   );

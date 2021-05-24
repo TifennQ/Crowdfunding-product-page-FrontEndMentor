@@ -83,7 +83,7 @@ body {
 }
 
 .loadbar-container {
-  width: 90%;
+  /* width: 90%; */
   height: 0.8rem;
   background-color: #f3f4f6;
 }
