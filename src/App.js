@@ -48,7 +48,7 @@ function App() {
         />
       <ModalCompleted isModalCompletedOpen={isModalCompletedOpen} setIsModalCompletedOpen={setIsModalCompletedOpen}/>
       <Showcase isDesktop={isDesktop}/>
-      <Section1 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
+      <Section1 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} isDesktop={isDesktop}/>
       <Backers/>
       <About/>
     </div>

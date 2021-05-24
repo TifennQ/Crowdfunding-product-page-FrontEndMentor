@@ -27,8 +27,12 @@ body {
 }
 
 @keyframes opacity {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .btn {
@@ -37,6 +41,11 @@ body {
 
 .btn-disabled {
   background-color: #9b9b9b;
+}
+
+.btn-gray {
+  background-color: #F4F4F4;
+  color: #717171;
 }
 
 .pledge {
@@ -83,6 +92,13 @@ body {
   width: 80%;
   height: 0.8rem;
   background-color: hsl(176, 72%, 28%);
+}
+
+@media only screen and (min-width: 1440px) {
+  .mastercraft-logo {
+    left: 50%;
+    top: -15%;
+  }
 }
 
 code {
