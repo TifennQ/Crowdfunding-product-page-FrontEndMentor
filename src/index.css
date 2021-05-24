@@ -34,8 +34,6 @@ body {
   animation: opacity 300ms ease-in-out;
   left: 50%;
   transform: translateX(-50%);
-  height: 80vh;
-
 }
 
 @keyframes opacity {
@@ -59,6 +57,7 @@ body {
   background-color: #F4F4F4;
   color: #717171;
 }
+
 
 .pledge {
   color: hsl(176, 72%, 28%);
@@ -110,6 +109,10 @@ body {
   .mastercraft-logo {
     left: 50%;
     top: -15%;
+  }
+
+  #buttonHovered {
+    transition: border-color 300ms ease-in-out;
   }
 }
 

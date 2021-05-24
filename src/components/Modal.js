@@ -52,10 +52,8 @@ const Modal = ({isDesktop, isModalOpen, setIsModalOpen, pledgeIsSelected, setPle
                 {
                     isDesktop && (
                         <CardsModalDesktop
+                            cards={cardsModal} 
                             pledgeIsSelected={pledgeIsSelected} 
-                            setPledgeIsSelected={setPledgeIsSelected} 
-                            setIsModalOpen={setIsModalOpen}
-                            setIsModalCompletedOpen={setIsModalCompletedOpen}
                             handleClick={handleClick}
                             handleCompletePledge={handleCompletePledge}
                         />
