@@ -3,14 +3,14 @@ import dataModal from '../dataModal'
 import iconClose from '../images/icon-close-modal.svg'
 import CardsModal from './CardsModal'
 
-const Modal = ({isModalOpen, setIsModalOpen}) => {
+const Modal = ({isModalOpen, setIsModalOpen, pledgeIsSelected, setPledgeIsSelected, setIsModalCompletedOpen, isModalCompletedOpen}) => {
     const [cardsModal, setCardsModal] = useState(dataModal)
 
     return (
         <>
         {
             isModalOpen && (
-                <section className="absolute w-11/12 bg-white py-5 px-5 z-40 mt-32 mx-4 border rounded-lg">
+                <section className="absolute w-11/12 bg-white py-5 px-5 z-40 mt-32 mx-4 border rounded-lg modal">
                 <div>
                     <div className="flex justify-between items-center">
                         <h2 className="text-lg font-bold">Back this project</h2>
@@ -18,7 +18,13 @@ const Modal = ({isModalOpen, setIsModalOpen}) => {
                     </div>
                     <p className="my-5 text-sm text-gray-500">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
                 </div>
-                <CardsModal cards={cardsModal}/>
+                <CardsModal 
+                    cards={cardsModal} 
+                    pledgeIsSelected={pledgeIsSelected} 
+                    setPledgeIsSelected={setPledgeIsSelected} 
+                    setIsModalOpen={setIsModalOpen}
+                    setIsModalCompletedOpen={setIsModalCompletedOpen}
+                    />
             </section>
             )
         }
