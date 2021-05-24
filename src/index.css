@@ -8,14 +8,18 @@ body {
   background-color: #f3f4f6;
 }
 
+#root {
+  position: relative;
+}
+
 .withModalOpen::before {
   content: "";
   display: block;
   position: absolute;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   opacity: 0.6;
   z-index: 40;
   background: black;
@@ -24,6 +28,14 @@ body {
 
 .modal {
   animation: opacity 300ms ease-in-out;
+}
+
+.modalDesktop {
+  animation: opacity 300ms ease-in-out;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80vh;
+
 }
 
 @keyframes opacity {

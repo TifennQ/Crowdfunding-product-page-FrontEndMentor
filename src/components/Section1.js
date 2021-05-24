@@ -17,10 +17,20 @@ const Section1 = ({isModalOpen, setIsModalOpen, isDesktop}) => {
                     <button onClick={() => setIsModalOpen(!isModalOpen)} class="btn rounded-full py-1 px-6 text-white">
                         Back this project
                     </button>
-                    <button className="flex items-center btn-gray rounded-full pr-5">
-                        <img src={bookmark} alt="Bookmark"/>
-                        <p className="pl-3">Bookmark</p>
-                    </button>
+                    {
+                        isDesktop && (
+                            <button className="flex items-center btn-gray rounded-full pr-5">
+                                <img src={bookmark} alt="Bookmark"/>
+                                <p className="pl-3">Bookmark</p>
+                            </button>
+                        )
+                    }
+                    {
+                        !isDesktop && (
+                            <img src={bookmark} alt="Bookmark"/>
+                        )
+                    }
+
                 </div>
 
             </section>

@@ -1,25 +1,6 @@
 import React from 'react'
 
-const CardsModal = ({cards, pledgeIsSelected, setPledgeIsSelected, setIsModalOpen, setIsModalCompletedOpen}) => {
-    const handleClick = (id, left) => {
-        if(left === "0") {
-            return 
-        }
-        else {
-            if(pledgeIsSelected === id) {
-                setPledgeIsSelected(0)
-            }
-            else {
-                setPledgeIsSelected(id)
-            }
-        }
-
-    }
-
-    const handleCompletePledge = () => {
-        setIsModalOpen(false)
-        setIsModalCompletedOpen(true)
-    }
+const CardsModal = ({cards, pledgeIsSelected, handleClick, handleCompletePledge}) => {
 
     return (
         <>

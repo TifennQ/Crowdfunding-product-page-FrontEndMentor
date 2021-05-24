@@ -17,13 +17,14 @@ function App() {
   const [isDesktop, setIsDesktop] = useState(false)
  
   useEffect(() => {
-    const body = document.getElementById('root')
+    const root = document.getElementById('root')
+    const body = document.querySelector('body')
 
     if(isModalOpen || isModalCompletedOpen || isMenuOpen) {
-      body.classList.add('withModalOpen')
+      root.classList.add('withModalOpen')
     }
     else {
-      body.classList.remove('withModalOpen')
+      root.classList.remove('withModalOpen')
     }
 
     if(width < 960) {
@@ -39,6 +40,7 @@ function App() {
     <div>
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} isDesktop={isDesktop}/>
       <Modal 
+        isDesktop={isDesktop}
         isModalOpen={isModalOpen} 
         setIsModalOpen={setIsModalOpen} 
         pledgeIsSelected={pledgeIsSelected} 
