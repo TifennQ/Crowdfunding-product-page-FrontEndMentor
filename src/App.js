@@ -50,7 +50,7 @@ function App() {
       <Showcase isDesktop={isDesktop}/>
       <Section1 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} isDesktop={isDesktop}/>
       <Backers isDesktop={isDesktop}/>
-      <About/>
+      <About isDesktop={isDesktop}/>
     </div>
   );
 }
