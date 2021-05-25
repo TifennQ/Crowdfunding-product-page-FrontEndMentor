@@ -16,6 +16,31 @@ function App() {
   const [pledgeIsSelected, setPledgeIsSelected] = useState(0)
   const [isDesktop, setIsDesktop] = useState(false)
  
+  const activateState = (e, string="") => {
+    if(!string) {
+      if(e.target.classList.contains('buttonSelected')) {
+        e.target.classList.remove('buttonSelected')
+      }
+      else {
+        let buttons = document.getElementsByClassName('btn')
+        for(let button of buttons) {
+          button.classList.remove('buttonSelected')
+        }
+        e.target.classList.add('buttonSelected')
+      }
+    }
+    else if (string === "bookmark") {
+      if(e.target.classList.contains('bookmarkSelected')) {
+        e.target.classList.remove('bookmarkSelected')
+      }
+      else {
+        e.target.classList.add('bookmarkSelected')
+      }
+    }
+
+
+  }
+
   useEffect(() => {
     const root = document.getElementById('root')
     const body = document.querySelector('body')
@@ -48,11 +73,11 @@ function App() {
         isModalCompletedOpen={isModalCompletedOpen}
         setIsModalCompletedOpen={setIsModalCompletedOpen}
         />
-      <ModalCompleted isModalCompletedOpen={isModalCompletedOpen} setIsModalCompletedOpen={setIsModalCompletedOpen}/>
+      <ModalCompleted isDesktop={isDesktop} isModalCompletedOpen={isModalCompletedOpen} setIsModalCompletedOpen={setIsModalCompletedOpen}/>
       <Showcase isDesktop={isDesktop}/>
-      <Section1 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} isDesktop={isDesktop}/>
+      <Section1 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} isDesktop={isDesktop} activateState={activateState}/>
       <Backers isDesktop={isDesktop}/>
-      <About isDesktop={isDesktop}/>
+      <About isDesktop={isDesktop} activateState={activateState}/>
     </div>
   );
 }

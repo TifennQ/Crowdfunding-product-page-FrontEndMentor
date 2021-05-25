@@ -2,7 +2,7 @@ import React from 'react'
 import mastercraft from '../images/logo-mastercraft.svg'
 import bookmark from '../images/icon-bookmark.svg'
 
-const Section1 = ({isModalOpen, setIsModalOpen, isDesktop}) => {
+const Section1 = ({isModalOpen, setIsModalOpen, isDesktop, activateState}) => {
     return (
         <>
             <section className={`${isDesktop ? "relative border bg-white w-7/12 mx-auto rounded-lg -mt-20 pb-10" : "relative border bg-white mx-5 px-5 rounded-lg -mt-20 pb-10"}`}>
@@ -14,12 +14,12 @@ const Section1 = ({isModalOpen, setIsModalOpen, isDesktop}) => {
                     </p>
                 </div>
                 <div className={`${isDesktop ? "flex justify-between px-20 pt-5" : "flex justify-between"}`}>
-                    <button onClick={() => setIsModalOpen(!isModalOpen)} class="btn rounded-full py-1 px-6 text-white">
+                    <button onClick={() => setIsModalOpen(!isModalOpen)} class="btn rounded-full py-1 px-6 text-white font-bold">
                         Back this project
                     </button>
                     {
                         isDesktop && (
-                            <button className="flex items-center btn-gray rounded-full pr-5">
+                            <button onClick={(e) => activateState(e, "bookmark")} className="flex items-center btn-gray rounded-full pr-5">
                                 <img src={bookmark} alt="Bookmark"/>
                                 <p className="pl-3">Bookmark</p>
                             </button>

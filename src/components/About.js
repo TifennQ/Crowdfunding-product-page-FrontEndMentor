@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Cards from './Cards'
 import data from "../data"
 
-const About = ({isDesktop}) => {  
+const About = ({isDesktop, activateState}) => {  
     const [cards, setCards] = useState(data) 
     return (
         <>
@@ -15,7 +15,7 @@ const About = ({isDesktop}) => {
                 <p className="text-gray-500 pt-5">Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
     to allow notepads, pens, and USB sticks to be stored under the stand.</p>
               </div>
-            <Cards isDesktop={isDesktop} cards={cards}/>
+            <Cards isDesktop={isDesktop} cards={cards} activateState={activateState}/>
             </section>
         </>
     )

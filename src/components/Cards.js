@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Cards = ({cards, isDesktop}) => {
+const Cards = ({cards, isDesktop, activateState}) => {
     return (
         <>
             <div className={`${isDesktop ? "pt-5" : null}`}>
@@ -17,7 +17,7 @@ const Cards = ({cards, isDesktop}) => {
                                 <p className={`${left === "0" ? "mt-5 text-gray-500 disabled" : "mt-5 text-gray-500"}`} >{description}</p>
                                 <div className={`${isDesktop ? "flex justify-between" : null}`}>
                                     <p className={`${left === "0" ? "text-gray-500 mt-5 disabled" : "text-gray-500 mt-5"}`}><span className="text-black text-2xl font-bold">{left}</span> left</p>
-                                    <button className={`${left === "0" ? "btn-disabled cursor-not-allowed rounded-full py-3 px-6 text-white mt-5 font-bold disabled" : "btn rounded-full py-3 px-6 text-white mt-5 font-bold"}`}>{button}</button>
+                                    <button onClick={(e) => activateState(e)} className={`${left === "0" ? "btn-disabled cursor-not-allowed rounded-full py-3 px-6 text-white mt-5 font-bold disabled" : "btn rounded-full py-3 px-6 text-white mt-5 font-bold"}`}>{button}</button>
                                 </div>
                             </div>
                         )

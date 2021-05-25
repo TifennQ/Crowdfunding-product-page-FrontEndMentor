@@ -1,24 +1,26 @@
 import React, {useState, useEffect, useRef} from 'react'
 
-//TODO : changer le clique : on doit pouvoir sélectionner en cliquer sur le titre également, mettre en place le hover, permettre de fermer la modal en clique à l'extérieur ??
+//TODO : changer le clique : permettre de fermer la modal en clique à l'extérieur ??
 // si oui : essayer de refactoriser pour toutes les modals
 
 const CardsModalDesktop = ({cards, pledgeIsSelected, handleClick, handleCompletePledge}) => {
     const [isHovered, setIsHovered] = useState(false)
 
-    const handleHover = (id, bool) => {
-        let selectButtonId = "selectButton" + id
-        let selectTitleId = "selectTitle" + id
-        let selectButtonHovered = document.getElementById(selectButtonId)
-        let selectTitle = document.getElementById(selectTitleId)
-        console.log(selectButtonHovered)
-        if(bool) {
-            selectButtonHovered.style.borderColor = "hsl(176, 72%, 28%)"
-            selectTitle.style.color = "hsl(176, 72%, 28%)"
-        }
-        else {
-            selectButtonHovered.style.borderColor = "rgba(229, 231, 235, 1)"
-            selectTitle.style.color = "black"
+    const handleHover = (id, bool, left) => {
+        if(left !== "0") {
+            let selectButtonId = "selectButton" + id
+            let selectTitleId = "selectTitle" + id
+            let selectButtonHovered = document.getElementById(selectButtonId)
+            let selectTitle = document.getElementById(selectTitleId)
+            console.log(selectButtonHovered)
+            if(bool) {
+                selectButtonHovered.style.borderColor = "hsl(176, 72%, 28%)"
+                selectTitle.style.color = "hsl(176, 72%, 28%)"
+            }
+            else {
+                selectButtonHovered.style.borderColor = "rgba(229, 231, 235, 1)"
+                selectTitle.style.color = "black"
+            }
         }
     }
 
@@ -46,10 +48,10 @@ const CardsModalDesktop = ({cards, pledgeIsSelected, handleClick, handleComplete
                             <div key={id} className={`${pledgeIsSelected === id ? "border-2 rounded-lg px-5 py-6 my-5 pledge_selected" : "border-2 rounded-lg px-5 py-6 my-5"}`}>
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center">
-                                        <div id={`selectButton${id}`}  onMouseEnter={() => handleHover(id, true)} onMouseLeave={() => handleHover(id, false)} onClick={() => handleClick(id, left)} className={`${left === "0" ? "relative border-2 rounded-full w-8 h-8 mr-4 cursor-not-allowed" : " relative border-2 rounded-full w-8 h-8 mr-4 cursor-pointer selectButton"}`}>
+                                        <div id={`selectButton${id}`}  onMouseEnter={() => handleHover(id, true, left)} onMouseLeave={() => handleHover(id, false)} onClick={() => handleClick(id, left)} className={`${left === "0" ? "relative border-2 rounded-full w-8 h-8 mr-4 cursor-not-allowed" : " relative border-2 rounded-full w-8 h-8 mr-4 cursor-pointer selectButton"}`}>
                                             <div className={`${pledgeIsSelected === id ? "rounded-full w-5 h-5 cursor-pointer selected" : "rounded-full w-5 h-5 cursor-pointer"}`}></div>
                                         </div>
-                                        <h4 id={`selectTitle${id}`} onMouseEnter={() => handleHover(id, true)} onMouseLeave={() => handleHover(id, false)}  onClick={() => handleClick(id, left)} className={`${left === "0" ? "font-bold gray_disabled mr-4" : "font-bold mr-4 cursor-pointer selectTitle"}`}>{title}</h4>
+                                        <h4 id={`selectTitle${id}`} onMouseEnter={() => handleHover(id, true, left)} onMouseLeave={() => handleHover(id, false)}  onClick={() => handleClick(id, left)} className={`${left === "0" ? "font-bold gray_disabled mr-4" : "font-bold mr-4 cursor-pointer selectTitle"}`}>{title}</h4>
                                         <h5 className= {`${left === "0" ? "pledge disabled" : "pledge"}`}>{pledge}</h5>
                                     </div>
                                     {
