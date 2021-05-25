@@ -6,7 +6,7 @@ export const Showcase = ({isDesktop}) => {
     return (
         <>
             <section>
-                <img src={`${isDesktop ? desktopHero : mobileHero}`} alt="Mobile Hero"/>
+                <img className={`${isDesktop ? "w-full" : null}`} src={`${isDesktop ? desktopHero : mobileHero}`} alt="Mobile Hero"/>
             </section>
         </>
     )

@@ -115,10 +115,6 @@ body {
     background-color: hsl(175, 72%, 14%);
   }
 
-  .bookmarkSelected {
-    /*colorier image en vert, modifier backgprun color ? ciblé <p> et colorier en vert*/
-  }
-
   .paraBookmarkSelected {
     color: hsl(176, 72%, 28%);
     font-weight: bold;
