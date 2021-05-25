@@ -1,8 +1,9 @@
 import React from 'react'
 import mastercraft from '../images/logo-mastercraft.svg'
 import bookmark from '../images/icon-bookmark.svg'
+import bookmarkSelected from '../images/icon-bookmark-selected.svg'
 
-const Section1 = ({isModalOpen, setIsModalOpen, isDesktop, activateState}) => {
+const Section1 = ({isModalOpen, setIsModalOpen, isDesktop, activateState, isBookmarkSelected}) => {
     return (
         <>
             <section className={`${isDesktop ? "relative border bg-white w-7/12 mx-auto rounded-lg -mt-20 pb-10" : "relative border bg-white mx-5 px-5 rounded-lg -mt-20 pb-10"}`}>
@@ -20,8 +21,8 @@ const Section1 = ({isModalOpen, setIsModalOpen, isDesktop, activateState}) => {
                     {
                         isDesktop && (
                             <button onClick={(e) => activateState(e, "bookmark")} className="flex items-center btn-gray rounded-full pr-5">
-                                <img src={bookmark} alt="Bookmark"/>
-                                <p className="pl-3">Bookmark</p>
+                                <img id="imageBookmark" src={isBookmarkSelected ? bookmarkSelected : bookmark} alt="Bookmark"/>
+                                <p id="paraBookmark" className="pl-3">Bookmark</p>
                             </button>
                         )
                     }

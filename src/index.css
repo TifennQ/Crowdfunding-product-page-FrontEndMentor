@@ -119,8 +119,10 @@ body {
     /*colorier image en vert, modifier backgprun color ? ciblé <p> et colorier en vert*/
   }
 
-  .bookmarkSelected > p {
-    color: hsl(175, 72%, 14%);
+  .paraBookmarkSelected {
+    color: hsl(176, 72%, 28%);
+    font-weight: bold;
+    transition: all 200ms ease-in-out;
   }
 
   @keyframes activate {

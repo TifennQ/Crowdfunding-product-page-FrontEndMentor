@@ -15,6 +15,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [pledgeIsSelected, setPledgeIsSelected] = useState(0)
   const [isDesktop, setIsDesktop] = useState(false)
+  const [isBookmarkSelected, setIsBookmarkSelected] = useState(false)
  
   const activateState = (e, string="") => {
     if(!string) {
@@ -30,11 +31,17 @@ function App() {
       }
     }
     else if (string === "bookmark") {
-      if(e.target.classList.contains('bookmarkSelected')) {
-        e.target.classList.remove('bookmarkSelected')
+      let imageBookmark = document.getElementById("imageBookmark")
+      let paraBookmark = document.getElementById("paraBookmark")
+      if(paraBookmark.classList.contains('paraBookmarkSelected')) {
+        paraBookmark.classList.remove('paraBookmarkSelected')
+        paraBookmark.innerText = "Bookmark"
+        setIsBookmarkSelected(false)
       }
       else {
-        e.target.classList.add('bookmarkSelected')
+        paraBookmark.classList.add('paraBookmarkSelected')
+        paraBookmark.innerText = "Bookmarked"
+        setIsBookmarkSelected(true)
       }
     }
 
@@ -75,7 +82,7 @@ function App() {
         />
       <ModalCompleted isDesktop={isDesktop} isModalCompletedOpen={isModalCompletedOpen} setIsModalCompletedOpen={setIsModalCompletedOpen}/>
       <Showcase isDesktop={isDesktop}/>
-      <Section1 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} isDesktop={isDesktop} activateState={activateState}/>
+      <Section1 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} isDesktop={isDesktop} activateState={activateState} isBookmarkSelected={isBookmarkSelected}/>
       <Backers isDesktop={isDesktop}/>
       <About isDesktop={isDesktop} activateState={activateState}/>
     </div>
