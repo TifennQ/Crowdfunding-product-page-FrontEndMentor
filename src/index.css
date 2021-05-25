@@ -54,10 +54,9 @@ body {
 }
 
 .btn-gray {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   color: #717171;
 }
-
 
 .pledge {
   color: hsl(176, 72%, 28%);
@@ -111,8 +110,13 @@ body {
     top: -15%;
   }
 
-  #buttonHovered {
+  #buttonHovered,
+  .selectButton {
     transition: border-color 300ms ease-in-out;
+  }
+
+  .selectTitle {
+    transition: color 300ms ease-in-out;
   }
 }
 
